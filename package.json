@@ -1,6 +1,6 @@
 {
   "name": "better-vue-input-tag",
-  "version": "0.0.16",
+  "version": "1.0.0",
   "description": "Vue.js input tag editor component",
   "keywords": [
     "input",
@@ -8,6 +8,7 @@
     "inputtag"
   ],
   "author": "Matias Tucci <matiastucci@gmail.com>",
+  "contributors": ["Hugo Alliaume <hugo@yproximite.com"],
   "main": "dist/vue-input-tag.min.js",
   "repository": "https://github.com/matiastucci/vue-input-tag",
   "homepage": "https://matiastucci.github.io/vue-input-tag",
