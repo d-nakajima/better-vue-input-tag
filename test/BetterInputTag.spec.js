@@ -12,7 +12,7 @@ describe('BetterInputTag.vue', () => {
 
   beforeEach((cb) => {
     BetterInputTagComponent = new ClonedComponent({
-      data () { return { tags: [] } }
+      propsData: { tags: [] }
     }).$mount()
     cb()
   })
@@ -63,8 +63,7 @@ describe('BetterInputTag.vue', () => {
 
   describe('read-only="true"', () => {
     const BetterInputTagComponentReadOnly = new ClonedComponent({
-      data () { return { tags: [] } },
-      propsData: { readOnly: true }
+      propsData: { tags: [], readOnly: true }
     }).$mount()
 
     it('should have a read-only CSS class and shouldn\'t have a remove tag button', () => {
@@ -93,7 +92,7 @@ describe('BetterInputTag.vue', () => {
 
   describe('tags="[1,2,3]"', () => {
     const BetterInputTagComponentWithTags = new ClonedComponent({
-      data () { return { tags: ['Jerry', 'Kramer', 'Elaine'] } }
+      propsData: { tags: ['Jerry', 'Kramer', 'Elaine'] }
     }).$mount()
 
     it('should load the tags', () => {
@@ -115,7 +114,7 @@ describe('BetterInputTag.vue', () => {
   describe('placeholder="Add Tag"', () => {
     const placeholder = 'Add Tag'
     const BetterInputTagComponentWithPlaceholder = new ClonedComponent({
-      data () { return { placeholder } }
+      propsData: { placeholder }
     }).$mount()
 
     it('should have a placeholder', () => {
