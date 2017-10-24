@@ -10,6 +10,7 @@
       return {
         readOnly: false,
         placeholder: 'Add Tag',
+        onPasteSeparator: '',
         tags: ['Jerry', 'Kramer', 'Elaine', 'George'],
         htmlCode: '',
         validate: ''
@@ -24,6 +25,7 @@
       getPreviewHTML () {
         let html = '<input-tag'
         html += this.placeholder ? ` placeholder="${this.placeholder}"` : ''
+        html += this.onPasteSeparator ? ` on-paste-separator="${this.onPasteSeparator}"` : ''
         html += this.tags ? ' :tags="tags"' : ''
         html += this.readOnly ? ' :read-only="true"' : ''
         html += this.validate ? ` validate="${this.validate}"` : ''
@@ -68,6 +70,10 @@
           input(v-model='placeholder' type='text')
 
         .form-group
+          p.label onPasteSeparator:
+          input(v-model='onPasteSeparator' type='text')
+
+        .form-group
           p.label readOnly:
           input(v-model='readOnly' type='checkbox')
 
@@ -89,6 +95,7 @@
           :on-change='newTag',
           :tags='tags',
           :placeholder='placeholder',
+          :on-paste-separator='onPasteSeparator',
           :read-only='readOnly',
           :validate='validate'
         )
@@ -111,7 +118,7 @@
     p.label {
       display: inline-block;
       margin-right: 1rem;
-      width: 100px;
+      width: 140px;
     }
     input {
       padding: 5px;

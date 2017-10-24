@@ -37,6 +37,7 @@ import InputTag from 'vue-input-tag'
 | ---:| --- | ---| --- |
 | tags | Array | [] | Tags to be render in the input |
 | placeholder | String | "" | Placeholder to be shown when no tags |
+| on-paste-delimiter | String | "" | During pasting, this delimiter is used to create multiple tags |
 | read-only | Boolean | false | Set input to readonly |
 | on-change | Function | undefined | Callback to get the tags when there is a change |
 | validate | String | "" | Apply certain validator for user input. Choose from `email`, `url`, `text`, `digits` or `isodate`
