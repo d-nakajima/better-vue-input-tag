@@ -97,8 +97,9 @@
 </template>
 
 <style>
-
   .vue-input-tag-wrapper {
+    display: flex;
+    align-items: center;
     background-color: #fff;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -137,6 +138,7 @@
   }
 
   .vue-input-tag-wrapper .new-tag {
+    flex: 1;
     background: transparent;
     border: 0;
     color: #777;
@@ -147,7 +149,6 @@
     outline: none;
     padding: 4px;
     padding-left: 0;
-    width: 80px;
   }
 
   .vue-input-tag-wrapper.read-only {
