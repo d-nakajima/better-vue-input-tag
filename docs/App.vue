@@ -93,7 +93,7 @@
           p.label tags:
           code {{ tags }}
 
-        input-tag(
+        better-input-tag(
           :on-change='newTag',
           :tags='tags',
           :placeholder='placeholder',
