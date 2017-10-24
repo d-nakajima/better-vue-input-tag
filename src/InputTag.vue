@@ -96,9 +96,10 @@
 
 </template>
 
-<style>
-
+<style lang="scss">
   .vue-input-tag-wrapper {
+    display: flex;
+    align-items: center;
     background-color: #fff;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -107,51 +108,50 @@
     cursor: text;
     text-align: left;
     -webkit-appearance: textfield;
-  }
 
-  .vue-input-tag-wrapper .input-tag {
-    background-color: #cde69c;
-    border-radius: 2px;
-    border: 1px solid #a5d24a;
-    color: #638421;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 400;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    padding: 3px;
-  }
+    .input-tag {
+      background-color: #cde69c;
+      border-radius: 2px;
+      border: 1px solid #a5d24a;
+      color: #638421;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 400;
+      margin-bottom: 4px;
+      margin-right: 4px;
+      padding: 3px;
 
-  .vue-input-tag-wrapper .input-tag .remove {
-    cursor: pointer;
-    font-weight: bold;
-    color: #638421;
-  }
+      .remove {
+        cursor: pointer;
+        font-weight: bold;
+        color: #638421;
 
-  .vue-input-tag-wrapper .input-tag .remove:hover {
-    text-decoration: none;
-  }
+        &:hover {
+          text-decoration: none;
+        }
 
-  .vue-input-tag-wrapper .input-tag .remove::before {
-    content: " x";
-  }
+        &::before {
+          content: " x";
+        }
+      }
+    }
 
-  .vue-input-tag-wrapper .new-tag {
-    background: transparent;
-    border: 0;
-    color: #777;
-    font-size: 13px;
-    font-weight: 400;
-    margin-bottom: 6px;
-    margin-top: 1px;
-    outline: none;
-    padding: 4px;
-    padding-left: 0;
-    width: 80px;
-  }
+    .new-tag {
+      flex: 1;
+      background: transparent;
+      border: 0;
+      color: #777;
+      font-size: 13px;
+      font-weight: 400;
+      margin-bottom: 6px;
+      margin-top: 1px;
+      outline: none;
+      padding: 4px;
+      padding-left: 0;
+    }
 
-  .vue-input-tag-wrapper.read-only {
-    cursor: default;
+    &.read-only {
+      cursor: default;
+    }
   }
-
 </style>
