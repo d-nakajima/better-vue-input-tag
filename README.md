@@ -1,14 +1,9 @@
 # vue-input-tag
-> A Vue.js 2.0 input tag component inspired in [react-tagsinput](https://github.com/olahol/react-tagsinput)
+> A Better Vue.js 2.0 input tag component inspired in [react-tagsinput](https://github.com/olahol/react-tagsinput), an improved version of [vue-input-tag](https://tucci.me/vue-input-tag)
 
-[![Codeship](https://img.shields.io/codeship/3a192ae0-9502-0134-8f6e-1e693cf3975e/master.svg)]()
-[![Coverage Status](https://coveralls.io/repos/github/matiastucci/vue-input-tag/badge.svg?branch=master)](https://coveralls.io/github/matiastucci/vue-input-tag?branch=master)
-[![bitHound Overall Score](https://www.bithound.io/github/matiastucci/vue-input-tag/badges/score.svg)](https://www.bithound.io/github/matiastucci/vue-input-tag)
-[![bitHound Dependencies](https://www.bithound.io/github/matiastucci/vue-input-tag/badges/dependencies.svg)](https://www.bithound.io/github/matiastucci/vue-input-tag/master/dependencies/npm)
-[![bitHound Code](https://www.bithound.io/github/matiastucci/vue-input-tag/badges/code.svg)](https://www.bithound.io/github/matiastucci/vue-input-tag)
-[![Version](https://img.shields.io/npm/v/vue-input-tag.svg)](https://www.npmjs.com/package/vue-input-tag)
-[![License](https://img.shields.io/npm/l/vue-input-tag.svg)](https://www.npmjs.com/package/vue-input-tag)
-[![Monthly Downloads](https://img.shields.io/npm/dm/vue-input-tag.svg)](https://www.npmjs.com/package/vue-input-tag)
+[![Build Status](https://travis-ci.org/Yproximite/better-vue-input-tag.svg?branch=master)](https://travis-ci.org/Yproximite/better-vue-input-tag)
+[![Version](https://img.shields.io/npm/v/better-vue-input-tag.svg)](https://www.npmjs.com/package/better-vue-input-tag)
+[![License](https://img.shields.io/npm/l/better-vue-input-tag.svg)](https://www.npmjs.com/package/better-vue-input-tag)
 
 <p align="center">
   <img src="demo.gif" width="750" alt="Logo"/>
