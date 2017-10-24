@@ -1,10 +1,10 @@
 <script>
-  import InputTag from '@/InputTag.vue'
+  import BetterInputTag from '@/BetterInputTag.vue'
 
   export default {
     name: 'app',
 
-    components: { InputTag },
+    components: { BetterInputTag },
 
     data () {
       return {
@@ -23,7 +23,7 @@
       },
 
       getPreviewHTML () {
-        let html = '<input-tag'
+        let html = '<better-input-tag'
         html += this.placeholder ? ` placeholder="${this.placeholder}"` : ''
         html += this.onPasteSeparator ? ` on-paste-separator="${this.onPasteSeparator}"` : ''
         html += this.tags ? ' :tags="tags"' : ''
@@ -39,15 +39,17 @@
   #app
 
     section.page-header
-      h1.project-name Vue.js Input Tag
+      h1.project-name Vue.js Better Input Tag
       h2.project-tagline
-      a.btn(href='https://github.com/matiastucci/vue-input-tag' target='_blank') GitHub
-      a.btn(href='https://www.npmjs.com/package/vue-input-tag' target='_blank') NPM
+      a.btn(href='https://github.com/Yproximite/better-vue-input-tag' target='_blank') GitHub
+      a.btn(href='https://www.npmjs.com/package/better-vue-input-tag' target='_blank') NPM
 
     section.main-content
 
       p
-        | Vue.js 2.0 component, inspired in&nbsp;
+        | Vue.js 2.0 component, an improved version of&nbsp;
+        a(href='https://tucci.me/vue-input-tag' target='_blank') vue-input-tag
+        | , inspired in&nbsp;
         a(href='https://github.com/olahol/react-tagsinput' target='_blank') react-tagsinput&nbsp;
 
       h3
@@ -56,7 +58,7 @@
         | Install
 
       p
-        code npm install vue-input-tag --save
+        code npm install better-vue-input-tag --save
 
       h3
         a#playground.anchor(href='#playground', aria-hidden='true')
@@ -103,10 +105,13 @@
         code {{ getPreviewHTML() }}
 
       footer.site-footer
-        span.site-footer-credits
+        p.site-footer-credits
+          | Original package by&nbsp;
           a(href='https://twitter.com/TucciMatias' target='_blank') @TucciMatias
-          span &nbsp;-&nbsp;
-          a(href='https://tucci.me' target='_blank') tucci.me
+          | &nbsp;-&nbsp;
+          a(href='https://tucci.me' target='_blank') tucci.me,
+          | &nbsp;improved by&nbsp;
+          a(href='https://github.com/Kocal' target='_blank') @Kocal
 </template>
 
 <style lang="scss">
