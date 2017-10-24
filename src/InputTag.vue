@@ -58,6 +58,10 @@
       validate: {
         type: String,
         default: ''
+      },
+      onPasteSeparator: {
+        type: String,
+        default: null
       }
     },
 
@@ -74,6 +78,14 @@
       },
 
       addNew (tag) {
+        if (this.onPasteSeparator && tag.indexOf(this.onPasteSeparator) !== -1) {
+          tag.split(this.onPasteSeparator)
+            .map(t => t.trim())
+            .map(this.addNew)
+
+          return
+        }
+
         if (tag && this.tags.indexOf(tag) === -1 && this.validateIfNeeded(tag)) {
           this.tags.push(tag)
           this.tagChange()
