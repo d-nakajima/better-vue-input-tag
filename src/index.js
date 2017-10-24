@@ -1,5 +1,5 @@
-import InputTag from './InputTag.vue'
+import BetterInputTag from './BetterInputTag.vue'
 
-export { InputTag }
+export { BetterInputTag }
 
-export default InputTag
+export default BetterInputTag

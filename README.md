@@ -17,19 +17,19 @@
 ## Installation
 
 ``` bash
-npm install vue-input-tag --save
+npm install better-vue-input-tag --save
 ```
 
 and in your component:
 
 ``` javascript
-import InputTag from 'vue-input-tag'
+import BetterInputTag from 'better-vue-input-tag'
 ```
 
 ## Usage
 
 ``` html
-<input-tag :on-change="callbackMethod" :tags="tagsArray"></input-tag>
+<better-input-tag :on-change="callbackMethod" :tags="tagsArray"></better-input-tag>
 ```
 
 ## Props
