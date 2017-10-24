@@ -1,11 +1,37 @@
+<template>
+  <div
+    @click="focusNewTag()"
+    :class="{'read-only': readOnly}"
+    class="vue-input-tag-wrapper"
+  >
+    <span v-for="(tag, index) in tags" :key="index" class="input-tag">
+      <span>{{ tag }}</span>
+      <a
+        v-if="!readOnly"
+        @click.prevent.stop="remove(index)"
+        class="remove"></a>
+    </span>
+
+    <input
+      v-if="!readOnly"
+      v-model="newTag"
+      @keydown.delete.stop="removeLastTag()"
+      @keydown.enter.188.tab.prevent.stop="addNew(newTag)"
+      :placeholder="placeholder"
+      type="text"
+      class="new-tag"
+    />
+  </div>
+</template>
+
 <script>
   /*eslint-disable*/
   const validators = {
     email: new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
-    url : new RegExp(/^(https?|ftp|rmtp|mms):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i),
-    text : new RegExp(/^[a-zA-Z]+$/),
-    digits : new RegExp(/^[\d() \.\:\-\+#]+$/),
-    isodate : new RegExp(/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/)
+    url: new RegExp(/^(https?|ftp|rmtp|mms):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i),
+    text: new RegExp(/^[a-zA-Z]+$/),
+    digits: new RegExp(/^[\d() \.\:\-\+#]+$/),
+    isodate: new RegExp(/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/)
   }
   /*eslint-enable*/
 
@@ -83,18 +109,6 @@
     }
   }
 </script>
-
-<template>
-
-  <div @click="focusNewTag()" v-bind:class="{'read-only': readOnly}" class="vue-input-tag-wrapper">
-    <span v-for="(tag, index) in tags" v-bind:key="index" class="input-tag">
-      <span>{{ tag }}</span>
-      <a v-if="!readOnly" @click.prevent.stop="remove(index)" class="remove"></a>
-    </span>
-    <input v-if="!readOnly" v-bind:placeholder="placeholder" type="text" v-model="newTag" v-on:keydown.delete.stop="removeLastTag()" v-on:keydown.enter.188.tab.prevent.stop="addNew(newTag)" class="new-tag"/>
-  </div>
-
-</template>
 
 <style lang="scss">
   .vue-input-tag-wrapper {
