@@ -127,6 +127,7 @@
   .vue-input-tag-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #fff;
     border: 1px solid #ccc;
     overflow: hidden;
