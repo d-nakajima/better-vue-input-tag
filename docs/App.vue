@@ -60,12 +60,28 @@
       p
         code npm install better-vue-input-tag --save
 
-      h3
-        a#playground.anchor(href='#playground', aria-hidden='true')
+      h3 
+        a#demo.anchor(href='#demo', aria-hidden='true')
           span.octicon.octicon-link(aria-hidden='true')
-        | Playground
+        | Demo
 
-      .playground
+      .demo
+
+        better-input-tag(
+          :on-change='newTag',
+          :tags='tags',
+          :placeholder='placeholder',
+          :on-paste-separator='onPasteSeparator',
+          :read-only='readOnly',
+          :validate='validate'
+        )
+
+      h3
+        a#configuration.anchor(href='#configuration', aria-hidden='true')
+          span.octicon.octicon-link(aria-hidden='true')
+        | Configuration
+
+      .configuration
 
         .form-group
           p.label placeholder:
@@ -93,15 +109,13 @@
           p.label tags:
           code {{ tags }}
 
-        better-input-tag(
-          :on-change='newTag',
-          :tags='tags',
-          :placeholder='placeholder',
-          :on-paste-separator='onPasteSeparator',
-          :read-only='readOnly',
-          :validate='validate'
-        )
+      h3
+        a#code.anchor(href='#code', aria-hidden='true')
+          span.octicon.octicon-link(aria-hidden='true')
+        | Code
 
+      .code
+        
         code {{ getPreviewHTML() }}
 
       footer.site-footer
