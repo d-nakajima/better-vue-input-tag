@@ -207,4 +207,52 @@ describe('BetterInputTag.vue', () => {
       expect(BetterInputTagISODateOnly.tags.length).toEqual(1)
     })
   })
+
+  describe('validate length of tag', () => {
+    const BetterInputTagMinMaxOnly = new ClonedComponent({
+      propsData: { length: {min: 1, max: 5} }
+    }).$mount()
+
+    it('should only tags with length >= 1 and <= 5 characters', () => {
+      BetterInputTagMinMaxOnly.addNew('foo')
+      BetterInputTagMinMaxOnly.addNew('123')
+      BetterInputTagMinMaxOnly.addNew('mati@tucci.me')
+      BetterInputTagMinMaxOnly.addNew('https://tucci.me')
+      BetterInputTagMinMaxOnly.addNew('2002-04-03')
+
+      expect(BetterInputTagMinMaxOnly.tags.length).toEqual(2)
+    })
+  })
+
+  describe('validate length of tag', () => {
+    const BetterInputTagMinOnly = new ClonedComponent({
+      propsData: { length: {min: 1} }
+    }).$mount()
+
+    it('should only tags with length >= to 1 characters', () => {
+      BetterInputTagMinOnly.addNew('foo')
+      BetterInputTagMinOnly.addNew('123')
+      BetterInputTagMinOnly.addNew('mati@tucci.me')
+      BetterInputTagMinOnly.addNew('https://tucci.me')
+      BetterInputTagMinOnly.addNew('2002-04-03')
+
+      expect(BetterInputTagMinOnly.tags.length).toEqual(5)
+    })
+  })
+
+  describe('validate length of tag', () => {
+    const BetterInputTagMaxOnly = new ClonedComponent({
+      propsData: { length: {max: 7} }
+    }).$mount()
+
+    it('should only tags with length <= 5 characters', () => {
+      BetterInputTagMaxOnly.addNew('foo')
+      BetterInputTagMaxOnly.addNew('123')
+      BetterInputTagMaxOnly.addNew('mati@tucci.me')
+      BetterInputTagMaxOnly.addNew('https://tucci.me')
+      BetterInputTagMaxOnly.addNew('2002-04-03')
+
+      expect(BetterInputTagMaxOnly.tags.length).toEqual(2)
+    })
+  })
 })
