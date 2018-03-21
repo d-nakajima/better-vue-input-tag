@@ -13,7 +13,8 @@
         onPasteSeparator: '',
         tags: ['Jerry', 'Kramer', 'Elaine', 'George'],
         htmlCode: '',
-        validate: ''
+        validate: '',
+        length: {min: null, max: null}
       }
     },
 
@@ -29,6 +30,7 @@
         html += this.tags ? ' :tags="tags"' : ''
         html += this.readOnly ? ' :read-only="true"' : ''
         html += this.validate ? ` validate="${this.validate}"` : ''
+        html += this.length.min || this.length.max ? ` length="{min: ${this.length.min}, max: ${this.length.max}}"` : ''
         return `${html}></input-tag>`
       }
     }
@@ -73,7 +75,8 @@
           :placeholder='placeholder',
           :on-paste-separator='onPasteSeparator',
           :read-only='readOnly',
-          :validate='validate'
+          :validate='validate',
+          :length='length'
         )
 
       h3
@@ -104,6 +107,13 @@
             option(value='url') Url
             option(value='digits') Digits
             option(value='isodate') ISO Date
+
+        .form-group
+          p.label min tag length:
+          input(v-model='length.min' type='number')
+          br
+          p.label max tag length:
+          input(v-model='length.max' type='number')
 
         .form-group
           p.label tags:

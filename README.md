@@ -35,7 +35,8 @@ import BetterInputTag from 'better-vue-input-tag'
 | on-paste-delimiter | String | "" | During pasting, this delimiter is used to create multiple tags |
 | read-only | Boolean | false | Set input to readonly |
 | on-change | Function | undefined | Callback to get the tags when there is a change |
-| validate | String | "" | Apply certain validator for user input. Choose from `email`, `url`, `text`, `digits` or `isodate`
+| validate | String | "" | Apply certain validator for user input. Choose from `email`, `url`, `text`, `digits` or `isodate` |
+| length | Object | undefined | Set a minimum and/or maximum length for tags `{min: 1, max: 10}` |
 
 **This project was built with [generator-vue-component](https://github.com/ianaya89/generator-vue-component) ❤️**
 

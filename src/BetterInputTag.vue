@@ -62,6 +62,10 @@
       onPasteSeparator: {
         type: String,
         default: null
+      },
+      length: {
+        type: Object,
+        default: null
       }
     },
 
@@ -86,7 +90,7 @@
           return
         }
 
-        if (tag && this.tags.indexOf(tag) === -1 && this.validateIfNeeded(tag)) {
+        if (tag && this.tags.indexOf(tag) === -1 && this.validateIfNeeded(tag) && this.validateLengthIfNeeded(tag)) {
           this.tags.push(tag)
           this.tagChange()
         }
@@ -98,6 +102,19 @@
           return true
         } else if (Object.keys(validators).indexOf(this.validate) > -1) {
           return validators[this.validate].test(tagValue)
+        }
+        return true
+      },
+
+      validateLengthIfNeeded (tagValue) {
+        if (this.length === null || this.length === undefined) {
+          return true
+        } else if (this.length.min && this.length.max) {
+          return tagValue.length >= this.length.min && tagValue.length <= this.length.max
+        } else if (this.length.min) {
+          return tagValue.length >= this.length.min
+        } else if (this.length.max) {
+          return tagValue.length <= this.length.max
         }
         return true
       },
