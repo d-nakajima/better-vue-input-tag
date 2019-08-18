@@ -16,7 +16,7 @@
       v-if="!readOnly"
       v-model="newTag"
       @keydown.delete.stop="removeLastTag()"
-      @keydown.enter.188.tab.prevent.stop="addNew(newTag)"
+      @keydown.space.enter.188.tab.prevent.stop="addNew(newTag)"
       @blur.stop="addNew(newTag)"
       :placeholder="placeholder"
       type="text"
